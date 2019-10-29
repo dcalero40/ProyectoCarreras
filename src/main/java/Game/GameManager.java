@@ -10,8 +10,7 @@ public class GameManager {
     public GameManager(){
         game = new Game();
         menu = new GameMenu();
-
-        menu.StartMenu();
+        menu.StartMenu(game);
     }
 
 
