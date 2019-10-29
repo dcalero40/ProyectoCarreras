@@ -11,6 +11,7 @@ public class GameManager {
         game = new Game();
         menu = new GameMenu();
         menu.StartMenu(game);
+
     }
 
 

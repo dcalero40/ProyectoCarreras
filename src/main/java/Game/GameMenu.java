@@ -31,7 +31,7 @@ public class GameMenu {
             setOpcion(in.nextInt());
             switch (opcion) {
                 case 1:
-                    //llamar a configuración
+                    configurarMenu(game);
                     break;
                 case 2:
                     //mostrar resultados
@@ -49,6 +49,13 @@ public class GameMenu {
                     break;
             }
         }
+    }
+
+    private void configurarMenu(Game game){
+
+    }
+    private void mostrarMenuConfigurar(){
+        System.out.println("");
     }
 
     //getter y setter
