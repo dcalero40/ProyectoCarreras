@@ -16,4 +16,8 @@ public class Campeonato {
     public String getUbicacion() {
         return ubicacion;
     }
+
+    public String getResultados() {
+        return this.toString();
+    }
 }

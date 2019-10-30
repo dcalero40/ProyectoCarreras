@@ -1,8 +1,8 @@
-import Game.GameManager;
+import Game.Game;
 
 public class Main {
     public static void main(String[] args) {
-        GameManager gameManager = new GameManager();
+        Game game = new Game();
 
     }
 }
