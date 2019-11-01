@@ -1,8 +1,6 @@
 package Game;
 
-import com.sun.codemodel.internal.JCase;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class GameMenu {
@@ -25,8 +23,7 @@ public class GameMenu {
                 "4. ACABAR");
     }
 
-    public void StartMenu(Game game){
-        while(!isAcabar()) {
+    public void startMenu(Game game){
             this.MostrarMenu();
             setOpcion(in.nextInt());
             switch (opcion) {
@@ -34,21 +31,23 @@ public class GameMenu {
                     configurarMenu(game);
                     break;
                 case 2:
-                    //mostrar resultados
+                    if (game.getCampeonato() != null) {
+                        System.out.println(game.getCampeonato().getResultados());
+                    } else System.out.println("No hay resultados");
+
                     break;
                 case 3:
-                    //Jugar
+                    game.jugar();
                     break;
                 case 4:
                     //acabar
-                    setAcabar(true);
+                    game.finish();
                     break;
                 default:
                     // code block
                     System.out.println("Por favor introduce una opción.");
                     break;
             }
-        }
     }
 
     private void configurarMenu(Game game){
