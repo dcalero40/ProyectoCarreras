@@ -1,13 +1,34 @@
 package Game.Campeonato;
 
 import Game.Jugador.Jugador;
+import Game.Jugador.JugadorUsuario;
 
 import java.util.ArrayList;
 
 public class Campeonato {
-    String nombre, ubicacion;
+    public Campeonato() {
+        this.jugadorArrayList = new ArrayList<Jugador>();
+
+    }
+
+    private String nombre;
+
+    public void setNcircuitos(int ncircuitos) {
+        this.ncircuitos = ncircuitos;
+    }
+
+    private String ubicacion;
+    private int ncircuitos;
+
     //arraylist de circuitos
-    ArrayList<Circuito> circuitoArrayList = new ArrayList<Circuito>();
+    private ArrayList<Circuito> circuitoArrayList = new ArrayList<Circuito>();
+    private ArrayList<Jugador> jugadorArrayList;
+    private int numJugadores;
+
+    public ArrayList<Circuito> getCircuitoArrayList() {
+        return circuitoArrayList;
+    }
+
 
     public String getNombre() {
         return nombre;
@@ -20,4 +41,38 @@ public class Campeonato {
     public String getResultados() {
         return this.toString();
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public void setNumJugadores() {
+        if(jugadorArrayList.size()>this.numJugadores){
+            //elimino jugadores random que sobren
+        }
+        else if(jugadorArrayList.size()<this.numJugadores){
+            //añado //bucle añadir jugadores
+        }
+    }
+    public void setNumJugadores(int numJugadores) {
+        this.numJugadores=numJugadores;
+    }
+
+    public Jugador getMiJugador() {
+        // Buscar en la array de jugadores nuestro jugador.
+        return new JugadorUsuario();
+
+    }
+
+    /*
+    run
+    bucle circuit{
+        correr circuito
+    }
+
+    * */
 }

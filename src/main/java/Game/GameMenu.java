@@ -1,20 +1,21 @@
 package Game;
 
 
+import Game.Campeonato.Circuito;
+
 import java.util.Scanner;
 
 public class GameMenu {
     //scanner
     Scanner in = new Scanner(System.in);
     // OPCIONES...
-    private int opcion;
     private boolean acabar;
 
     public GameMenu(){
-        this.setOpcion(0);
+
     }
 
-    public void MostrarMenu(){
+    public void MostrarMenuStart(){
         //sout
         System.out.println("ESCOGE UNA OPCIÓN.\n" +
                 "1. CONFIGURAR LA COMPETICION.\n" +
@@ -23,12 +24,24 @@ public class GameMenu {
                 "4. ACABAR");
     }
 
+    public void MostrarMenuConfiguracion(){
+        //sout
+        System.out.println("ESCOGE UNA OPCIÓN A CONFIGURAR:\n" +
+                "1. NOMBRE CAMPEONATO.\n" +
+                "2. NUMERO DE CIRCUITOS.\n" +
+                "3. NOMBRE DE CIRCUITOS\n" +
+                "4. NUMERO DE JUGADORES\n" +
+                "5. NOMBRE DE TU JUGADOR\n" +
+                "6. TIPO DE VEHICULOS");
+    }
+
     public void startMenu(Game game){
-            this.MostrarMenu();
-            setOpcion(in.nextInt());
-            switch (opcion) {
+            this.MostrarMenuStart();
+
+            // Pedir identifcador de la opcion:
+            switch (in.nextInt()) {
                 case 1:
-                    configurarMenu(game);
+                    menuConfiguracion(game);
                     break;
                 case 2:
                     if (game.getCampeonato() != null) {
@@ -50,7 +63,55 @@ public class GameMenu {
             }
     }
 
-    private void configurarMenu(Game game){
+    private void menuConfiguracion(Game game){
+        //que quieres configurar?
+        //njum jugadores
+
+        /*
+        System.out.println("ESCOGE UNA OPCIÓN A CONFIGURAR:\n" +
+                "1. NOMBRE CAMPEONATO.\n" +
+                "2. NUMERO DE CIRCUITOS.\n" +
+                "3. NOMBRE DE CIRCUITOS\n" +
+                "4. NUMERO DE JUGADORES\n" +
+                "5. NOMBRE DE TU JUGADOR\n" +
+                "6. TIPO DE VEHICULOS");
+         */
+        mostrarMenuConfigurar();
+        switch (in.nextInt()) {
+            case 1:
+                //funcion que pertenece campeonato
+                System.out.print("Introduce el nombre del campeonato: ");
+                game.getCampeonato().setNombre(in.nextLine());
+                break;
+            case 2:
+                System.out.print("Introduce el numero de circuitos: ");
+                game.getCampeonato().setNcircuitos(in.nextInt());
+                break;
+            case 3:
+                int count = 1;
+                for (Circuito circuito: game.getCampeonato().getCircuitoArrayList()) {
+                    System.out.print("Nombre del circuito N" + count + ": ");
+                    circuito.setNombre(in.nextLine());
+                }
+                break;
+            case 4:
+                System.out.print("Introduce el numero de jugadores que participaran: ");
+                game.getCampeonato().setNumJugadores(in.nextInt());
+                break;
+            case 5:
+                System.out.print("Introduce el nombre de tu jugador: ");
+                game.getCampeonato().getMiJugador().setNombre();
+                break;
+
+
+
+
+            default:
+                // code block
+                System.out.println("Por favor introduce una opción.");
+                break;
+        }
+
 
     }
     private void mostrarMenuConfigurar(){
@@ -58,13 +119,6 @@ public class GameMenu {
     }
 
     //getter y setter
-    //opcion
-    public void setOpcion(int opcion) {
-        this.opcion = opcion;
-    }
-    public int getOpcion() {
-        return opcion;
-    }
     //boolean acabar
     public boolean isAcabar() {
         return acabar;
