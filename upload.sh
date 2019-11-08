@@ -1,3 +1,5 @@
+#!/bin/bash
+
 gituser=$(git config --get user.name);
 gitemail=$(git config --get user.email);
 read -p "Descripcion del commit: " commit
