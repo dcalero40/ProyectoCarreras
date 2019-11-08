@@ -68,31 +68,22 @@ public class GameMenu {
         //njum jugadores
 
         /*
-        System.out.println("ESCOGE UNA OPCIÓN A CONFIGURAR:\n" +
-                "1. NOMBRE CAMPEONATO.\n" +
-                "2. NUMERO DE CIRCUITOS.\n" +
-                "3. NOMBRE DE CIRCUITOS\n" +
-                "4. NUMERO DE JUGADORES\n" +
-                "5. NOMBRE DE TU JUGADOR\n" +
-                "6. TIPO DE VEHICULOS");
+
          */
         mostrarMenuConfigurar();
         switch (in.nextInt()) {
             case 1:
                 //funcion que pertenece campeonato
                 System.out.print("Introduce el nombre del campeonato: ");
-                game.getCampeonato().setNombre(in.nextLine());
+                game.configure().setNombreCampeonato(in.nextLine());
                 break;
             case 2:
                 System.out.print("Introduce el numero de circuitos: ");
-                game.getCampeonato().setNcircuitos(in.nextInt());
+                game.getConfiguracion().setnCircuitos(in.nextInt());
                 break;
             case 3:
                 int count = 1;
-                for (Circuito circuito: game.getCampeonato().getCircuitoArrayList()) {
-                    System.out.print("Nombre del circuito N" + count + ": ");
-                    circuito.setNombre(in.nextLine());
-                }
+
                 break;
             case 4:
                 System.out.print("Introduce el numero de jugadores que participaran: ");
@@ -102,10 +93,6 @@ public class GameMenu {
                 System.out.print("Introduce el nombre de tu jugador: ");
                 game.getCampeonato().getMiJugador().setNombre();
                 break;
-
-
-
-
             default:
                 // code block
                 System.out.println("Por favor introduce una opción.");
@@ -115,7 +102,13 @@ public class GameMenu {
 
     }
     private void mostrarMenuConfigurar(){
-        System.out.println("");
+        System.out.println("ESCOGE UNA OPCIÓN A CONFIGURAR:\n" +
+                "1. NOMBRE CAMPEONATO.\n" +
+                "2. NUMERO DE CIRCUITOS.\n" +
+                "3. NOMBRE DE CIRCUITOS\n" +
+                "4. NUMERO DE JUGADORES\n" +
+                "5. NOMBRE DE TU JUGADOR\n" +
+                "6. TIPO DE VEHICULOS");
     }
 
     //getter y setter
