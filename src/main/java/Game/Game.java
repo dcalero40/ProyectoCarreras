@@ -7,14 +7,13 @@ import Game.Jugador.Vehiculo.Vehiculo;
 import java.util.ArrayList;
 
 public class Game {
-    private ArrayList<Jugador> jugadorArrayList;
+
     private Campeonato campeonato;
     private Configuration configuration;
     private GameMenu gameMenu;
     private boolean finish;
 
     public Game(){
-        jugadorArrayList = new ArrayList<Jugador>();
         configuration = new Configuration();
         gameMenu = new GameMenu();
         while (!finish){
@@ -45,35 +44,31 @@ public class Game {
     }
 
     public void jugar() {
-    }
 
+    }
+@Deprecated
     class Configuration{
-        private int nJugadores;
-        private int nCircuitos;
-        private Vehiculo tipoVehiculo;
+
+
 
         public int getnJugadores() {
-            return nJugadores;
+            return this.getnJugadores();
         }
 
         public void setnJugadores(int nJugadores) {
-            this.nJugadores = nJugadores;
+            this.setnJugadores(nJugadores);
         }
 
         public int getnCircuitos() {
-            return nCircuitos;
+            return this.getnJugadores();
         }
 
-        public void setnCircuitos(int nCircuitos) {
-            this.nCircuitos = nCircuitos;
-        }
+        public void setnCircuitos(int nCircuitos) { this.setnCircuitos(nCircuitos); }
 
-        public Vehiculo getTipoVehiculo() {
-            return tipoVehiculo;
-        }
+        public Vehiculo getTipoVehiculo() { return this.getTipoVehiculo(); }
 
         public void setTipoVehiculo(Vehiculo tipoVehiculo) {
-            this.tipoVehiculo = tipoVehiculo;
+            this.setTipoVehiculo(tipoVehiculo);
         }
     }
 
