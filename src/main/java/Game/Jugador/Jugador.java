@@ -8,8 +8,8 @@ public abstract class Jugador {
     Vehiculo vehiculo;
     private int puntos;
 
-    public abstract Vehiculo setVehiculo();
-    public abstract String setNombre();
+    public abstract void setVehiculo();
+    public abstract void setNombre();
 
     //devuelve un tiempo aleatorio
     public float correr(){

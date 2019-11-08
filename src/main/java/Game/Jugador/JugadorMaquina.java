@@ -3,11 +3,24 @@ package Game.Jugador;
 import Game.Jugador.Vehiculo.Vehiculo;
 
 public class JugadorMaquina extends Jugador{
-    public Vehiculo setVehiculo() {
-        return null;
+    //datos por defecto:
+    @Override
+    public void setVehiculo() {
+
     }
 
-    public String setNombre() {
-        return null;
+    @Override
+    public void setNombre() {
+
     }
+    //si el jugador implementa sus datos personalizados
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo=vehiculo;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre=nombre;
+    }
+
+
 }

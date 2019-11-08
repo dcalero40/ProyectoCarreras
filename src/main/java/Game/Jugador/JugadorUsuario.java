@@ -3,12 +3,13 @@ package Game.Jugador;
 import Game.Jugador.Vehiculo.Vehiculo;
 
 public class JugadorUsuario extends Jugador {
-    public Vehiculo setVehiculo() {
-
-        return null;
+    @Override
+    public void setVehiculo() {
+        
     }
 
-    public String setNombre() {
-        return null;
+    @Override
+    public void setNombre() {
+
     }
 }
