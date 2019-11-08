@@ -8,7 +8,7 @@ public class JugadorUsuario extends Jugador {
         return null;
     }
 
-    public String setNombre() {
-        return null;
+    public void setNombre(String nombre) {
+        this.nombre=nombre;
     }
 }
