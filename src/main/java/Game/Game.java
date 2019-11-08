@@ -50,7 +50,6 @@ public class Game {
     class Configuration{
 
 
-
         public int getnJugadores() {
             return this.getnJugadores();
         }
