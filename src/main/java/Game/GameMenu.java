@@ -45,7 +45,7 @@ public class GameMenu {
                     break;
                 case 2:
                     if (game.getCampeonato() != null) {
-                        System.out.println(game.getCampeonato().getResultados());
+                        System.out.println("RESULTADOS");
                     } else System.out.println("No hay resultados");
 
                     break;
@@ -75,11 +75,11 @@ public class GameMenu {
             case 1:
                 //funcion que pertenece campeonato
                 System.out.print("Introduce el nombre del campeonato: ");
-                game.configure().setNombreCampeonato(in.nextLine());
+                game.getConfiguration().setNombreCampeonato(in.nextLine());
                 break;
             case 2:
                 System.out.print("Introduce el numero de circuitos: ");
-                game.getConfiguracion().setnCircuitos(in.nextInt());
+                game.getConfiguration().setnCircuitos(in.nextInt());
                 break;
             case 3:
                 int count = 1;
@@ -87,11 +87,10 @@ public class GameMenu {
                 break;
             case 4:
                 System.out.print("Introduce el numero de jugadores que participaran: ");
-                game.getCampeonato().setNumJugadores(in.nextInt());
+                game.getConfiguration().setNumJugadores(in.nextInt());
                 break;
             case 5:
                 System.out.print("Introduce el nombre de tu jugador: ");
-                game.getCampeonato().getMiJugador().setNombre();
                 break;
             default:
                 // code block

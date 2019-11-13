@@ -3,7 +3,7 @@ package Game;
 import Game.Campeonato.Campeonato;
 import Game.Jugador.Vehiculo.Vehiculo;
 
-class Configuration{
+public class Configuration{
     private String nombreCampeonato;
     private String[] nombreCircuitos;
     private String nombreJugador;
@@ -61,5 +61,9 @@ class Configuration{
 
     public void setTipoVehiculo(Vehiculo tipoVehiculo) {
         this.tipoVehiculo = tipoVehiculo;
+    }
+
+    public void setNumJugadores(int nJugadores) {
+        this.nJugadores = nJugadores;
     }
 }
