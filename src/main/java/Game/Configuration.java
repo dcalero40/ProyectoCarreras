@@ -1,7 +1,7 @@
 package Game;
 
 import Game.Campeonato.Campeonato;
-import Game.Jugador.Vehiculo.Vehiculo;
+import Game.Jugador.Vehiculo.*;
 
 class Configuration{
     private String nombreCampeonato;
@@ -56,7 +56,20 @@ class Configuration{
     }
 
     public Vehiculo getTipoVehiculo() {
-        return tipoVehiculo;
+        if (tipoVehiculo instanceof Coche){
+            return new Coche();
+        }
+        else if (tipoVehiculo instanceof Bicicleta){
+            return new Bicicleta();
+        }
+        else if (tipoVehiculo instanceof Camion){
+            return new Camion();
+        }
+        else if (tipoVehiculo instanceof Moto){
+            return new Moto();
+        }
+
+        return null;
     }
 
     public void setTipoVehiculo(Vehiculo tipoVehiculo) {

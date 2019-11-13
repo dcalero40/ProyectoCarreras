@@ -1,7 +1,8 @@
 package Game.Jugador;
 
 import Game.Game;
-import Game.Jugador.Vehiculo.Vehiculo;
+import Game.Jugador.Vehiculo.*;
+
 //implements ordenar por tiempo igual que hicimos con lo del lapiz
 public  class Jugador {
     //datos

@@ -45,7 +45,7 @@ public class GameMenu {
                     break;
                 case 2:
                     if (game.getCampeonato() != null) {
-                        System.out.println(game.getCampeonato().getResultados());
+                        //System.out.println(game.getCampeonato().getResultados());
                     } else System.out.println("No hay resultados");
 
                     break;
