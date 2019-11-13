@@ -7,13 +7,13 @@ read -p "Descripcion del commit: " commit
 if [ -z "$gituser" ]
 then
     read -p "Introduce el nombre de tu perfil de GitHub: " gituser;
-    git config --set user.name $gituser
+    git config user.name $gituser
 fi
 
 if [ -z "$gitemail" ]
 then
-    read -p "Introduce el email de tu perfil de GitHub: " gituser;
-    git config --set user.email $gitemail
+    read -p "Introduce el email de tu perfil de GitHub: " gitemail;
+    git config user.email $gitemail
 fi
 
 git add .
