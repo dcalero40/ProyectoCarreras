@@ -1,7 +1,6 @@
 package Game.Campeonato;
 
 import Game.Jugador.Jugador;
-import Game.Jugador.JugadorUsuario;
 
 import java.util.ArrayList;
 
@@ -10,7 +9,7 @@ public class Campeonato {
         this.jugadorArrayList = new ArrayList<Jugador>();
 
     }
-
+    //datos
     private String nombre;
 
     public void setNcircuitos(int ncircuitos) {
@@ -23,6 +22,7 @@ public class Campeonato {
     //arraylist de circuitos
     private ArrayList<Circuito> circuitoArrayList = new ArrayList<Circuito>();
     private ArrayList<Jugador> jugadorArrayList;
+    private Jugador miJugador;
     private int numJugadores;
 
     public ArrayList<Circuito> getCircuitoArrayList() {
@@ -62,11 +62,6 @@ public class Campeonato {
         this.numJugadores=numJugadores;
     }
 
-    public Jugador getMiJugador() {
-        // Buscar en la array de jugadores nuestro jugador.
-        return new JugadorUsuario();
-
-    }
 
     /*
     run

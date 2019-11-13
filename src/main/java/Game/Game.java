@@ -2,6 +2,7 @@ package Game;
 
 import Game.Campeonato.Campeonato;
 import Game.Jugador.Jugador;
+import Game.Jugador.Vehiculo.Camion;
 import Game.Jugador.Vehiculo.Vehiculo;
 
 import java.util.ArrayList;
@@ -46,6 +47,27 @@ public class Game {
     public void jugar() {
 
     }
+    //metodos jugadores array
+    public Jugador obtenerJugadorUsuario(ArrayList<Jugador> jugadores, String name){
+        for (Jugador jugador: jugadores) {
+            if (jugador.soyEste(name)){
+                return jugador;
+            }
+        }
+        return null;
+    }
+
+    public void iniciarJugadoresAutomaticos(int numJugadores, ArrayList<Jugador> jugadores){
+        for (int i = 0; i <numJugadores ; i++) {
+            //rellenar con datos de la configuración
+            Jugador jugador=new Jugador(("J"+i),Configuration.vehiculo);
+            jugadores.add(jugador);
+        }
+    }
+
+
+
+
 @Deprecated
     class Configuration{
 
