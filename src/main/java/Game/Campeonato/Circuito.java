@@ -6,6 +6,10 @@ import Game.Jugador.Jugador;
 public class Circuito {
     String nombre;
 
+    public Circuito(String nombreCircuito) {
+        this.nombre = nombreCircuito;
+    }
+
     public String getNombre() {
         return nombre;
     }

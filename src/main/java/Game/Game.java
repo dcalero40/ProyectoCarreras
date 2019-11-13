@@ -50,67 +50,6 @@ public class Game {
         return this.configuration;
     }
 
-class Configuration{
-    private String nombreCampeonato;
-    private String[] nombreCircuitos;
-    private String nombreJugador;
-    private int nCircuitos;
-    private int nJugadores;
-    private Vehiculo tipoVehiculo;
-
-    public String getNombreCampeonato() {
-        return nombreCampeonato;
-    }
-
-    public void setNombreCampeonato(String nombreCampeonato) {
-        this.nombreCampeonato = nombreCampeonato;
-    }
-
-    public String[] getNombreCircuitos() {
-        return nombreCircuitos;
-    }
-
-    public boolean setNombreCircuitos() {
-        String nombres;
-        if (nCircuitos < 0) {
-            System.err.println("Falta definir el numero de circuitos");
-            return false;
-        }
-        for (int i = 0; i < nCircuitos; i++) {
-
-        }
-        return true;
-    }
-
-    public String getNombreJugador() {
-        return nombreJugador;
-    }
-
-    public void setNombreJugador(String nombreJugador) {
-        this.nombreJugador = nombreJugador;
-    }
-
-    public int getnCircuitos() {
-        return nCircuitos;
-    }
-
-    public void setnCircuitos(int nCircuitos) {
-        this.nCircuitos = nCircuitos;
-    }
-
-    public int getnJugadores() {
-        return nJugadores;
-    }
-
-    public void setnJugadores(int nJugadores) {
-        this.nJugadores = nJugadores;
-    }
-
-    public Configuration getConfiguration(){
-        return this;
-    }
-
-}
 
 }
 
