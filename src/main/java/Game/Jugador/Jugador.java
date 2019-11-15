@@ -57,8 +57,8 @@ public  class Jugador {
 
 
     public boolean soyEste(String name) {
-        if (this.nombre==name)return true;
-        else return false;
+        if (this.nombre.equals(name)) return true;
+        return false;
     }
 }
 

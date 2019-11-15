@@ -1,7 +1,10 @@
 package Game;
 
-import Game.Campeonato.Campeonato;
+import Game.Competicion.Campeonato;
 import Game.Jugador.Vehiculo.*;
+
+import java.lang.reflect.Field;
+import java.util.Scanner;
 
 public class Configuration{
     private String nombreCampeonato;
@@ -13,14 +16,16 @@ public class Configuration{
 
     public void setNombreCampeonato(String nombreCampeonato) {
         this.nombreCampeonato = nombreCampeonato;
+        nCircuitos = 0;
+        nJugadores = 0;
     }
 
     public void setnCircuitos(int nCircuitos) {
+        if (nCircuitos <= 0) {
+            System.err.println("Introduce un numero mayor a 0.");
+            return;
+        }
         this.nCircuitos = nCircuitos;
-    }
-
-    public Campeonato Configuration(){
-        return new Campeonato(nombreCampeonato, nCircuitos, nombreCircuitos, nJugadores, nombreJugador, tipoVehiculo);
     }
 
     public String getNombreCampeonato() {
@@ -31,7 +36,23 @@ public class Configuration{
         return nombreCircuitos;
     }
 
-    public void setNombreCircuitos(String[] nombreCircuitos) {
+    public void setNombreCircuitos() {
+        if (nCircuitos <= 0) {
+            System.out.println("Configura el numero de circuitos.\n");
+            return;
+        }
+
+        System.out.println("Introduce los nombre de cada uno de los circuitos:");
+        Scanner in = new Scanner(System.in);
+        nombreCircuitos = new String[nCircuitos];
+
+        for (int i = 0; i < nCircuitos; i++) {
+            System.out.print("Nombre del circuito N"+ i + ": ");
+            nombreCircuitos[i] = in.nextLine();
+        }
+    }
+
+    public void setNombreCircuitos(String[] nombreCircuitos){
         this.nombreCircuitos = nombreCircuitos;
     }
 
@@ -79,4 +100,20 @@ public class Configuration{
     public void setNumJugadores(int nJugadores) {
         this.nJugadores = nJugadores;
     }
+
+
+    public boolean exists() {
+        // Faltan comprobaciones de los strings si es "" o null
+        if(
+                !nombreCampeonato.equals("") &&
+                nCircuitos>0 &&
+                nombreCircuitos!=null &&
+                nJugadores>0 &&
+                !nombreJugador.equals("") &&
+                tipoVehiculo!=null &&
+                nCircuitos == nombreCircuitos.length
+        ) return true;
+        return false;
+    }
+
 }

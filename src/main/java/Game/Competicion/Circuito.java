@@ -1,7 +1,4 @@
-package Game.Campeonato;
-
-import Game.Game;
-import Game.Jugador.Jugador;
+package Game.Competicion;
 
 public class Circuito {
     String nombre;

@@ -1,8 +1,7 @@
 package Game;
 
-import Game.Campeonato.Campeonato;
+import Game.Competicion.Campeonato;
 import Game.Jugador.Jugador;
-import Game.Jugador.Vehiculo.*;
 
 import java.util.ArrayList;
 
@@ -17,15 +16,47 @@ public class Game {
     //constructor
     public Game() {
         configuration = new Configuration();
-        gameMenu = new GameMenu();
+        gameMenu = new GameMenu(this);
+    }
+
+    public void init(){
         while (!finish) {
-            gameMenu.startMenu(this);
+            gameMenu.startMenu();
         }
     }
 
     //METODO JUGAR
     public void jugar() {
-        //HARA CORRER A TODOS LOS JUAGODRES POR TODAS LAS CARRERAS
+        // Verificar que la configuracion exista y sea logica.
+        if (!configuration.exists()) {
+            System.err.println("Error en la configuracion.");
+            return;
+        }
+        System.out.println("Work!");
+        // Crear el campeonato
+        campeonato = new Campeonato(this);
+        // Inicializar los circuitos (Crear nombres...)
+        campeonato.createCircuitos(configuration.getnCircuitos(), configuration.getNombreCircuitos());
+        // Inicializar los jugadores
+        campeonato.iniciarJugadores();
+
+        //Sout con la informacion de la configuracion (Nombre del jugador, nombre de las maquinas..., ncircuitos y si quieres empezar)
+        System.out.println(
+                "Nombre de tu jugador: " + configuration.getNombreJugador() + "\n" +
+                "Nombre de las maquinas: " + configuration.
+        );
+
+        // For de circuitos
+            //nombre circuito
+            //iniciar esa carrera
+            //bucle que haga correr a todos los jugadores
+            //ordenar array jugadores por tiempo
+            //asignar puntos
+            //mostras los jugadores metodo to string (Resultados) posicion: nombre jugador: tiempo: puntos:
+        //cerra bucle
+        //ordenar por puntos
+        //resultados del campeonato jugadores ordenados
+        //Volver al menu?
     }
 
 
@@ -50,26 +81,7 @@ public class Game {
         return 5f;
     }
 
-    //metodos jugadores array
-    public Jugador obtenerJugadorUsuario(ArrayList<Jugador> jugadores, String name) {
-        for (Jugador jugador : jugadores) {
-            if (jugador.soyEste(name)) {
-                return jugador;
-            }
-        }
-        return null;
-    }
 
-    public void iniciarJugadores(ArrayList<Jugador> jugadores) {
-        //JUGADORES AUTOMATICOS
-        for (int i = 0; i < configuration.getnJugadores(); i++) {
-            //rellenar con datos de la configuración
-            Jugador jugador = new Jugador(("J" + i), configuration.getTipoVehiculo());
-            jugadores.add(jugador);
-        }
-        //JUGADOR USUARIO
-        Jugador jugador = new Jugador(configuration.getNombreJugador(),configuration.getTipoVehiculo());
-    }
 
     public Configuration getConfiguration() {
         return configuration;
