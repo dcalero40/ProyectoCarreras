@@ -9,7 +9,7 @@ public  class Jugador {
     private String nombre;
     private Vehiculo vehiculo;
     private int puntos;
-    private float tiempo;
+    private int tiempo;
 
     public Jugador(String nombre, Vehiculo vehiculo) {
         this.nombre = nombre;
@@ -40,7 +40,7 @@ public  class Jugador {
         return puntos;
     }
 
-    public float getTiempo() {
+    public int getTiempo() {
         return tiempo;
     }
 
@@ -51,7 +51,7 @@ public  class Jugador {
     }
 
     //devuelve un tiempo aleatorio
-    public float correr(){
+    public int correr(){
         return Game.getRandom();
     }
 
@@ -59,6 +59,14 @@ public  class Jugador {
     public boolean soyEste(String name) {
         if (this.nombre.equals(name)) return true;
         return false;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
     }
 }
 

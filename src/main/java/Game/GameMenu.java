@@ -1,6 +1,7 @@
 package Game;
 
 
+import Game.Jugador.Jugador;
 import Game.Jugador.Vehiculo.*;
 
 import java.util.Scanner;
@@ -37,10 +38,7 @@ public class GameMenu {
                     menuConfiguracion();
                     break;
                 case 2:
-                    if (game.getCampeonato() != null) {
-                        System.out.println("RESULTADOS");
-
-                    } else System.out.println("No hay resultados");
+                    game.resultados();
 
                     break;
                 case 3:
@@ -110,11 +108,15 @@ public class GameMenu {
                 case 7:
                     break;
                 case 666:
-                    game.getConfiguration().setNombreCampeonato("Bowser");
-                    game.getConfiguration().setnCircuitos(1);
-                    game.getConfiguration().setNombreCircuitos(new String[]{"Copa champiñon"});
-                    game.getConfiguration().setNumJugadores(3);
-                    game.getConfiguration().setNombreJugador("Mario");
+                    game.getConfiguration().setNombreCampeonato("MUERTE");
+                    game.getConfiguration().setnCircuitos(100);
+                    String[] aux = new String[game.getConfiguration().getnCircuitos()];
+                    for (int i = 0; i < game.getConfiguration().getnCircuitos(); i++) {
+                        aux[i] = ("C"+i);
+                    }
+                    game.getConfiguration().setNombreCircuitos(aux);
+                    game.getConfiguration().setNumJugadores(50);
+                    game.getConfiguration().setNombreJugador("SUPERVIVIENTE");
                     game.getConfiguration().setTipoVehiculo(new Coche());
                     System.out.println("READY?!");
 

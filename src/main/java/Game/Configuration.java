@@ -14,15 +14,23 @@ public class Configuration{
     private int nJugadores;
     private Vehiculo tipoVehiculo;
 
-    public void setNombreCampeonato(String nombreCampeonato) {
-        this.nombreCampeonato = nombreCampeonato;
+
+    public Configuration() {
+        nombreCampeonato = "";
+        nombreCircuitos = new String[0];
+        nombreJugador = "";
         nCircuitos = 0;
         nJugadores = 0;
+
+    }
+
+    public void setNombreCampeonato(String nombreCampeonato) {
+        this.nombreCampeonato = nombreCampeonato.toUpperCase();
     }
 
     public void setnCircuitos(int nCircuitos) {
         if (nCircuitos <= 0) {
-            System.err.println("Introduce un numero mayor a 0.");
+            System.err.println("INTRODUCE UN NUMERO MAYOR A 0.");
             return;
         }
         this.nCircuitos = nCircuitos;
@@ -38,22 +46,23 @@ public class Configuration{
 
     public void setNombreCircuitos() {
         if (nCircuitos <= 0) {
-            System.out.println("Configura el numero de circuitos.\n");
+            System.out.println("CONFIGURA EL NUMERO DE CIRCUITOS.\n");
             return;
         }
 
-        System.out.println("Introduce los nombre de cada uno de los circuitos:");
+        System.out.println("INTRODUCE LOS NOMBRES DE CADA UNO DE LOS CIRCUITOS:");
         Scanner in = new Scanner(System.in);
         nombreCircuitos = new String[nCircuitos];
 
         for (int i = 0; i < nCircuitos; i++) {
-            System.out.print("Nombre del circuito N"+ i + ": ");
-            nombreCircuitos[i] = in.nextLine();
+            System.out.print("NOMBRE DEL CIRCUITO N"+ i + ": ");
+            nombreCircuitos[i] = in.nextLine().toUpperCase();
         }
     }
 
     public void setNombreCircuitos(String[] nombreCircuitos){
         this.nombreCircuitos = nombreCircuitos;
+
     }
 
     public String getNombreJugador() {
@@ -61,7 +70,7 @@ public class Configuration{
     }
 
     public void setNombreJugador(String nombreJugador) {
-        this.nombreJugador = nombreJugador;
+        this.nombreJugador = nombreJugador.toUpperCase();
     }
 
     public int getnCircuitos() {

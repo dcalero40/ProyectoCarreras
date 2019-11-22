@@ -56,7 +56,22 @@ public class Campeonato {
         }
         //JUGADOR USUARIO
         Jugador jugador = new Jugador(game.getConfiguration().getNombreJugador(),game.getConfiguration().getTipoVehiculo());
+        jugadorArrayList.add(jugador);
     }
 
+    public ArrayList<Jugador> getJugadorArrayList() {
+        return jugadorArrayList;
+    }
 
+    public ArrayList<Circuito> getCircuitoArrayList() {
+        return circuitoArrayList;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }
